@@ -4,11 +4,6 @@ body{
     background-color: #112B3C;
     font-family: 'Poppins', sans-serif;
 }
-header{
-    position: fixed;
-    width: 100%;
-    z-index: 5;
-}
 .navbar-brand{
     margin: 5px 10px 0 10px;
 }
@@ -57,7 +52,7 @@ main{
 
 /* Estilos de main-inicio */
 
-.main-inicio{
+#main-inicio{
     margin-top: 0;
     padding-top: 0;
     background-color: #112B3C;
@@ -81,10 +76,10 @@ main{
         top: 30%;
         left: 2rem;
     }
-    .main-inicio h1{
+    #main-inicio h1{
         font-size: 50px;
     }
-    .main-inicio p{
+    #main-inicio p{
         font-size: 20px;
     }
 
@@ -299,7 +294,7 @@ main{
     }
 
     /* Estilos de main-servicios */
-    .main-servicios{
+    #main-servicios{
         background-color: #CDAC81;
         width: 100%;
         height: 450px;
@@ -395,7 +390,7 @@ main{
         left: 5vw;
     }
     /* Estilos de main-contacto */
-    .main-contactanos{
+    #main-contactanos{
         background-color: #112B3C;
         width: 100%;
         height: 830px;
@@ -403,11 +398,11 @@ main{
         justify-content: center;
         text-align: center;
     }
-    .main-contactanos h1{
+    #main-contactanos h1{
         color: #EC994B;
         font-size: 45px;
         font-weight: bold;
-        margin-top: 15vw;
+        margin-top: 13vw;
     }
     #form{
         position: absolute;
