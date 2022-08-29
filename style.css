@@ -5,23 +5,30 @@ body{
     font-family: 'Poppins', sans-serif;
 }
 .navbar-brand{
-    margin: 5px 10px 0 10px;
+    margin: 0;
+    width: 170px;
+}
+.navbar-brand img{
+    width: 94px;
+    height: 90px;
 }
 .navbar-nav{
     color: aliceblue;
     padding: 5px;
-    margin: 0 0 30px 35%;
     background-color: #115375;
     border-radius: 50px;
+}
+.navbar-collapse {
+    flex-basis: 100%; 
+    flex-grow: 0; 
     align-items: center;
 }
 .nav-item{
     padding: 0 10px 0 10px;
-    font-size: 18px;
 }
 .nav-link, .nav-link-active{
     color: aliceblue;
-    
+    font-size: 18px;
 }
 .button-register > a{
     font-weight: bold;
@@ -30,17 +37,14 @@ body{
     text-decoration: none;
     background-color: #EC994B;
     border-radius: 50px;
-    padding: 15px 20px 15px 20px;
-    margin: 0 5px 0 0;
-    justify-content: center;
-    align-items: center;
-}
-.button-register{
+    padding: 13px;
     margin-right: 8px;
 }
-#register{
-    margin: 0 0 30px 0;
+.collapse img{
+    width: 51px;
+    height: 51px;
 }
+
 
 /* Estilos por secciones */
 
@@ -96,11 +100,11 @@ main{
     }
     .btn-warning{
         background-color: #EC994B;
-        border-radius: 10px;
+        border-radius: 50px;
         border: none;
-        padding: 5px;
-        font-weight: bold;
+        padding: 10px 17px;
         font-size: 20px;
+        font-weight: 600;
         color: #0D1921;
     }
 
@@ -173,35 +177,31 @@ main{
     /* Estilos de main-nosotros */
 
     @media screen and (min-width: 1270px){
-        .main-nosotros-container{
+        #main-nosotros{
             background-color: #112B3C;
             width: 100%;
             height: 900px;
             display: flex;
-            align-items: center;
-            justify-content: center;
         }
-        .main-nosotros-container > div > h1{
+        #main-nosotros h2{
             font-size: 44px;
-            text-align: center;
             width: 100%;
-            margin: 0 0 40rem 0;
+            margin-top: 2vw;
         }
-        .nosotros-text{
+        #main-nosotros p{
+            font-size: 17px;
+            color: #F1F1F1;
+            text-align: justify;
             display: inline-block;
             width: 420px;
             margin: 16rem 2rem 10rem 2rem;
             position: absolute;
             right: 12rem;
-        }
-        .nosotros-text p{
-            font-size: 17px;
-            color: #F1F1F1;
-            text-align: justify;
+            z-index: 1;
         }
     
         /* Estilo imagen */
-        .nosotros-img{
+        #groomer{
             display: inline-block;
             margin: 10px 10px;
             position: absolute;
@@ -228,40 +228,35 @@ main{
     }
 
     @media screen and (min-width: 1210px) and (max-width: 1269px){
-        .main-nosotros-container{
+        #main-nosotros{
             background-color: #112B3C;
             width: 100%;
             height: 900px;
             display: flex;
-            align-items: center;
-            justify-content: center;
         }
-        .main-nosotros-container > div > h1{
+        #main-nosotros h2{
             font-size: 44px;
-            text-align: end;
             width: 100%;
-            margin: 0 0 40rem 0;
         }
-        .nosotros-text{
+        #main-nosotros p{
+            font-size: 17px;
+            color: #F1F1F1;
+            text-align: justify;
             display: inline-block;
             width: 420px;
             margin: 16rem 2rem 10rem 2rem;
             position: absolute;
-            right: 10rem;
-        }
-        .nosotros-text p{
-            font-size: 17px;
-            color: #F1F1F1;
-            text-align: justify;
+            right: 12rem;
+            z-index: 1;
         }
     
         /* Estilo imagen */
-        .nosotros-img{
+        #groomer{
             display: inline-block;
             margin: 10px 10px;
             position: absolute;
             top: 80rem;
-            left: 7rem;
+            left: 6rem;
             filter: drop-shadow(4px 4px 20px #091E2C);
         }
     
@@ -280,13 +275,6 @@ main{
             left: 0;
             z-index: 1;
         }
-        
-    
-    
-
-        /* Estilos de main-servicios */
-
-        /* Ubicacion elementos decorativos servicios */
 
         /* Estilos de main-contactanos*/ 
 
@@ -302,7 +290,7 @@ main{
         align-items: center;
         justify-content: center;
     }
-    .servicios-text h1{
+    .servicios-text h2{
         color: #1B1A17;
         font-size: 45px;
         font-weight: bold;
@@ -357,19 +345,37 @@ main{
         align-items: center;
         margin: 2rem 0 0;
     }
-    .card-title{
-        font-size: 27px;
-        font-weight: bold;
-        color: #141414;
+    @media screen and (min-width:1285px){
+        .card-title{
+            font-size: 27px;
+            font-weight: bold;
+            color: #141414;
+        }
+        .card-pricing{
+            font-size: 30px;
+            color: #5C2006;
+            margin: 0.5rem;
+        }
+        .card-text{
+            font-size: 18px;
+            color: #2E2E2E;
+        }
     }
-    .card-pricing{
-        font-size: 30px;
-        color: #5C2006;
-        margin: 0.5rem;
-    }
-    .card-text{
-        font-size: 18px;
-        color: #2E2E2E;
+    @media screen and (min-width: 1210px) and (max-width:1284px){
+        .card-title{
+            font-size: 24px;
+            font-weight: bold;
+            color: #141414;
+        }
+        .card-pricing{
+            font-size: 27px;
+            color: #5C2006;
+            margin: 0.5rem;
+        }
+        .card-text{
+            font-size: 15px;
+            color: #2E2E2E;
+        }
     }
     .btn-primary{
         background-color: #CDAC81;
@@ -380,37 +386,35 @@ main{
         font-weight: 600;
     }
     .card-text-complet{
-        width: 270px;
-        height: 209px;
+        width: 100%;
+        height: 80%;
     }
     /* Ubicacion elementos decorativos */
     #triangle-brown{
         position: absolute;
         top: 150vw;
-        left: 5vw;
+        left: 2vw;
     }
     /* Estilos de main-contacto */
     #main-contactanos{
         background-color: #112B3C;
         width: 100%;
-        height: 830px;
-        display: flex;
-        justify-content: center;
-        text-align: center;
+        height: 700px;
     }
-    #main-contactanos h1{
+    #main-contactanos h2{
         color: #EC994B;
         font-size: 45px;
         font-weight: bold;
         margin-top: 13vw;
     }
-    #form{
+    form{
         position: absolute;
-        top: 233vw;
-        left: 15vw;
+        top: 232.5vw;
+        left: calc(100%/8);
         text-align: center;
     }
     .form-control{
+        width: 25vw;
         padding: 0.9rem;
         margin: 1.2rem;
         border-radius: 10px;
@@ -419,46 +423,46 @@ main{
         padding-bottom: 4rem;
     }
     #map{
+        width: calc(100%/2.5);
         position: absolute;
-        top: 236vw;
-        right: 18vw;
+        top: 240vw;
+        right: calc(100%/8);
     }
-    #direction{
+    #logo-casa{
         position: absolute;
-        top: 230vw;
-        left: 30vw;
+        margin-top: 10vw;
+        left: 48vw;
     }
     #direction p{
         color: #FFFFFF;
-        display: flex;
-        font-weight: 600;
-        width: 20vw;
+        font-size: 16px;
+        width: 18vw;
         position: absolute;
-        top: 1vw;
-        left: 15vw;
+        margin-top: 11vw;
+        left: 54vw;
         text-align: left;
     }
     #dog-map{
         position: absolute;
-        top: 225vw;
-        right: 18vw;
+        top: 227.5vw;
+        right: calc(100%/8);
         z-index: 3;
     }
     /* Ubicacion elementos decorativos */
     #point-decoration2{
         position: absolute;
         top: 212vw;
-        left: -6vw;
+        left: -9vw;
     }
     #triangle-blue{
         position: absolute;
         top: 220vw;
-        right: 5vw;
+        right: 1vw;
     }
 
     /* Footer */
     footer{
-        margin-top: 8vw;
+        margin-top: 5vw;
         background-color: #1C2431;
         
     }
@@ -468,12 +472,12 @@ main{
     .row h5{
         color: #EC994B;
         font-weight: bold;
-        font-size: 28px;
+        font-size: 26px;
         margin-bottom: 3vw;
     }
     .nav-item, p{
         color: #F1F1F1;
-        font-size: 20px;
+        font-size: 16px;
     }
     .nav-item img{
         margin: 0 3vw 1vw 0;
@@ -494,119 +498,12 @@ main{
         padding: 0.5vw;
     }
     #footer-copyright h6{
-        font-size: 16px;
+        font-size: 14px;
         color: #F1F1F1;
         padding: 0.7vw;
         margin: 0;
     }
 }
-
-/******************* VISTA PARA PC PEQUEÑA *****************/
-@media screen and (min-width: 1000px) and (max-width: 1209px){
-
-    .main-inicio-container > div{
-        margin: 0 10px;
-    }
-
-    /* Estilo texto */
-    .inicio-text{
-        width: 400px;
-        display: inline-block;
-        position: absolute;
-        top: 30%;
-        left: 2rem;
-    }
-    .main-inicio h1{
-        font-size: 45px;
-    }
-    .main-inicio p{
-        font-size: 15px;
-    }
-
-    /* Estilo imagen */
-
-    .inicio-img{
-        display: inline-block;
-    }
-    .inicio-img img{
-        position: absolute;
-        top: 13%;
-        right: 10rem;
-        filter: drop-shadow(1px 4px 50px rgba(0, 0, 0, 0.4));
-    }
-    .btn-warning{
-        background-color: #EC994B;
-        border-radius: 10px;
-        border: none;
-        padding: 5px;
-        font-weight: bold;
-        font-size: 20px;
-        color: #0D1921;
-    }
-
-    /* Ubicacion elementos decorativos inicio */
-
-    #bone1{
-        position: absolute;
-        top: 4rem;
-        left: 10rem;
-        z-index: 1;
-    }
-    #bone2{
-        position: absolute;
-        right: 3rem;
-        top: 15rem;
-        transform: rotate(130deg);
-        z-index: 2;
-    }
-    #vector1{
-        position: absolute;
-        top: 30%;
-        right: 0;
-        z-index: 1;
-    }
-    #element-inicio{
-        position: absolute;
-        top: 0;
-        right: 0;
-        z-index: 0;
-    }
-    #bubble1{
-        position: absolute;
-        top: 5rem;
-        left: 22rem;
-        z-index: 1;
-    }
-    #bubble2{
-        position: absolute;
-        top: 25rem;
-        right: 8rem;
-        transform: rotate(130deg);
-        z-index: 1;
-    }
-    #bubble3{
-        position: absolute;
-        top: 40rem;
-        left: 15rem;
-        transform: rotate(-5deg);
-        z-index: 1;
-    }
-    #foot-dog{
-        position: absolute;
-        top: 40rem;
-        right: 1rem;
-        transform: rotate(-5deg);
-        z-index: 1;
-    }
-    #circle-decoration{
-        position: absolute;
-        top: 90%;
-        left: 0;
-        z-index: 1;
-    }
-    #point-decoration{
-        position: absolute;
-        top: 950px;
-        right: 0;
-    }
-}
+/******************* VISTA PARA PC GRANDE *****************/
+/******************* VISTA PARA TABLET *****************/
+/******************* VISTA PARA MOVIL *****************/
