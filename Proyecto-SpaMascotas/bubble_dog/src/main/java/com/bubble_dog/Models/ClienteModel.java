@@ -48,8 +48,6 @@ public class ClienteModel {
         this.hora_entrega = hora_entrega;
     }
 
-    
-
     @Override
     public String toString() {
         return "ClienteModel [apellido=" + apellido + ", cedula=" + cedula + ", email=" + email + ", fecha_entrega="
