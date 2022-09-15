@@ -1,5 +1,7 @@
 package com.bubble_dog.Services;
 
+//import java.util.List;
+
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.cfg.Configuration;
@@ -35,7 +37,7 @@ public class ClienteService {
             session.persist(cliente);
             session.getTransaction().commit();
 
-            message = "Clienete creado con exito";
+            message = "Cliente creado con exito";
         } catch (Exception e) {
             e.printStackTrace();
             message = e.getMessage();
@@ -44,5 +46,21 @@ public class ClienteService {
         session.close();
         return message;
 
+    }
+
+    //Obtener o mostrar cliente X cedula
+
+    public ClienteModel getClienteByCedula(int cedula) {
+        ClienteModel cliente = new ClienteModel();
+        Session session = openSession();
+        try {
+            cliente = session.find(ClienteModel.class, cedula);
+            
+        } catch (Exception e) {
+            e.printStackTrace();
+            
+        }
+        session.close();
+        return cliente;
     }
 }
