@@ -9,8 +9,9 @@ body {
     width: 170px;
 }
 .navbar-brand img {
-    width: 6.5vw;
-    height: 6vw;
+    margin: 0.5vw 0 0 1vw;
+    width: auto;
+    height: 5vw;
 }
 .navbar-nav {
     color: aliceblue;
@@ -66,7 +67,7 @@ main {
     align-items: center;
 }
 
-/******************* VISTA PARA PC ESTANDAR *****************/
+/******************* VISTA PARA PC *****************/
 @media screen and (min-width: 1024px) {
     /* Estilo texto */
     .inicio-text {
@@ -476,7 +477,5 @@ main {
         margin: 0;
     }
 }
-
-/******************* VISTA PARA PC GRANDE *****************/
 /******************* VISTA PARA TABLET *****************/
 /******************* VISTA PARA MOVIL *****************/
