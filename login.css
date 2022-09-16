@@ -52,13 +52,17 @@ header{
     font-size: 1.2vw;
 }
 .btn-warning{
-    background-color: #F09C4D;
+    background-color: #EC994B;
     border: none;
     border-radius: 1.4vw;
     padding: 0.8vw 1vw;
     font-weight: bold;
     font-size: 1.1vw;
     margin: 1vw;
+}
+.btn-warning a{
+    text-decoration: none;
+    color: #1C2431;
 }
 #bienvenido{
     background-color: #EC994B;
