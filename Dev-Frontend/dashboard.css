@@ -1,0 +1,213 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap');
+*{
+    font-family: 'Poppins', sans-serif;
+    padding: 0;
+    box-sizing: border-box;
+}
+:root{
+    --body-color: #151B29;
+    --sidebar-color: #1C2431;
+    --primary-color: #;
+    --toggle-color: #;
+    --text-color: #EC994B;
+
+    --tran-02: all 0.2s ease;
+    --tran-03: all 0.3s ease;
+    --tran-04: all 0.4s ease;
+    --tran-05: all 0.5s ease;
+}
+body{
+    height: 100%;
+    background: var(--body-color);
+}
+/* =============== Sidebar ============= */
+
+.sidebar{
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 16vw;
+    background: var(--sidebar-color);
+    transition: var(--tran-04);
+}
+.sidebar.close{
+    width: 6vw;
+    transition: var(--tran-04);
+}
+
+
+.sidebar .text{
+    font-size: 1.2vw;
+    font-weight: 400;
+    color: var(--text-color);
+    margin-left: 1vw;
+}
+.sidebar.close .text{
+    opacity: 0;
+    transition: var(--tran-04);
+}
+.sidebar .image{
+    min-width: 2vw;
+    display: flex;
+    align-items: center;
+}
+.sidebar .image-text img{
+    width: 4vw;
+    margin: 1vw;
+    cursor: pointer;
+}
+.sidebar header .image-text{
+    display: flex;
+    align-items: center;
+}
+header .image-text .header-text{
+    display:flex;
+    flex-direction: column;
+}
+.header-text .name{
+    font-weight: 600;
+}
+.sidebar ul{
+    margin-top: 1.5vw;
+    padding: 0 1vw;
+    align-items: center;
+}
+.sidebar li{
+    margin-top: 0.2vw;
+    height: 4vw;
+    display: flex;
+    list-style: none;
+    align-items: center;
+    border-radius: 2vw;    
+    white-space: nowrap;
+}
+.sidebar li:hover{
+    background: #151B29;
+    width: 100%;
+    height: 4.2vw;
+    border-radius: 2vw;
+    transition: var(--tran-04);
+}
+.nav-link a img{
+    height: 1.5vw;
+    margin-left: 1.4vw;
+}
+.nav-link a span{
+    font-size: 1.2vw;
+    margin-left: 2vw;
+    transition: var(--tran-04);
+}
+.menu-link.close li a span{
+    opacity: 0;
+    transition: var(--tran-04);
+}
+.nav-link a{
+    text-decoration: none;
+    color: #D9D9D9;
+}
+#top-bar{
+    background: #1C2431;
+    height: 4.4vw;
+}
+#top-bar button{
+    float: right;
+}
+#user-login{
+    width: 3.4vw;    
+    float: right;
+    margin: 0.6vw 2vw 0.6vw 0;
+}
+#user-login:hover{
+    cursor: pointer;
+}
+#sing-out{
+    float:right;
+    position: relative;
+    top: 4vw;
+    right: -3.8vw;
+    background: #1C2431;
+    width: 12vw;
+    height: 4vw;
+    text-align: center;
+    padding: 1.1vw 0.5vw;
+    border-radius: 1.4vw;
+    font-size: 1.2vw;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity .5s, visibility .5s, top .5s;
+}
+#sing-out span{
+    padding: 0.6vw;
+    justify-content: center;
+}
+#sing-out a{
+    text-decoration: none;
+    color: #D9D9D9;
+}
+#sing-out span:hover{
+    background: #203055;
+    border-radius: 1vw;
+    cursor: pointer;
+}
+#sing-out::before{
+    content: '';
+    position: absolute;
+    border: 1vw solid;
+    border-color: #1C2431 transparent transparent;
+    transform: rotate(180deg);
+    top: -1.9vw;
+    right: 1vw;
+}
+#sing-out.pop{
+    opacity: 1;
+    visibility: visible;
+    top: 5.4vw;
+}
+#clientes {
+    position: relative;
+    height: 100%;
+    left: 16vw;
+    width: calc(100% - 16vw);
+    transition: var(--tran-05);
+}
+.sidebar.close ~ #clientes{
+    left: 6vw;
+    width: calc(100% - 6vw);
+}
+#clientes .text{
+    color: #D9D9D9;
+    font-size: 2vw;
+    margin: 3vw 3vw 2vw;
+}
+.btn-warning{
+    background-color: #EC994B;
+    border: none;
+    border-radius: 1.3vw;
+    padding: 0.8vw 1.5vw;
+    font-size: 1.1vw;
+    margin: 1vw;
+    position: absolute;
+    left: 2vw;
+}
+.btn-primary{
+    background-color: #1F4690;
+    border: none;
+    border-radius: 1.3vw;
+    padding: 0.8vw 1.5vw;
+    font-size: 1.1vw;
+    margin: 1vw;
+    position: absolute;
+    right: 10vw;
+}
+.btn-danger{
+    background-color: #E94560;
+    border: none;
+    border-radius: 1.3vw;
+    padding: 0.8vw 1.5vw;
+    font-size: 1.1vw;
+    margin: 1vw;
+    color: #151B29;
+    position: absolute;
+    right: 2vw;
+}
