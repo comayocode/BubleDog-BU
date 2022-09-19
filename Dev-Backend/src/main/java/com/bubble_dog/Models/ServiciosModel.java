@@ -9,22 +9,22 @@ import jakarta.persistence.Table;
 @Table(name="servicio")
 public class ServiciosModel {
     @Id
-    private String id_servicio;
+    private int id_servicio;
     private String nombre_servicio;
-    private String costo_servicio;
+    private int costo_servicio;
     private String detalles_servicio;
 
     public ServiciosModel() {
     }
 
-    public ServiciosModel(String id_servicio, String nombre_servicio, String costo_servicio, String detalles_servicio) {
+    public ServiciosModel(int id_servicio, String nombre_servicio, int costo_servicio, String detalles_servicio) {
         this.id_servicio = id_servicio;
         this.nombre_servicio = nombre_servicio;
         this.costo_servicio = costo_servicio;
         this.detalles_servicio = detalles_servicio;
     }
 
-    public String getId_servicio() {
+    public int getId_servicio() {
         return id_servicio;
     }
 
@@ -32,7 +32,7 @@ public class ServiciosModel {
         return nombre_servicio;
     }
 
-    public String getCosto_servicio() {
+    public int getCosto_servicio() {
         return costo_servicio;
     }
 
@@ -44,7 +44,7 @@ public class ServiciosModel {
         this.nombre_servicio = nombre_servicio;
     }
 
-    public void setCosto_servicio(String costo_servicio) {
+    public void setCosto_servicio(int costo_servicio) {
         this.costo_servicio = costo_servicio;
     }
 
