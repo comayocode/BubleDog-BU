@@ -1,66 +1,47 @@
 package com.bubble_dog.Services;
 
-//import java.util.List;
-
-import org.hibernate.Session;
-import org.hibernate.SessionFactory;
-import org.hibernate.cfg.Configuration;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import com.bubble_dog.Models.ClienteModel;
+import com.bubble_dog.repository.ClienteRepository;
 
-public class ClienteService {
-    
-    /*ATRIBUTOS */
-    private SessionFactory factory;
+import java.util.List;
+import java.util.Optional;
 
-    //Contructores
-    public ClienteService() {
-        factory = new Configuration()
-        .configure("cfg.xml")
-        .addAnnotatedClass(ClienteModel.class)
-        .buildSessionFactory();
-    }
-    public Session openSession() {
-        Session session = factory.openSession();
-        session.beginTransaction();
+@Service
+public class ClienteService implements  IClienteService {
+    @Autowired
+    private ClienteRepository clienteRepository;
 
-        return session;
+    @Override
+    public ClienteModel create(ClienteModel clienteModel) {
+
+        return clienteRepository.save(clienteModel);
     }
 
-    //Agregar clientes
-    public String create(ClienteModel cliente){
+    @Override
+    public ClienteModel update(ClienteModel clienteModel) {
 
-        String message = "";
-        Session session = openSession();
-
-        try {
-            session.persist(cliente);
-            session.getTransaction().commit();
-
-            message = "Cliente creado con exito";
-        } catch (Exception e) {
-            e.printStackTrace();
-            message = e.getMessage();
-        }
-
-        session.close();
-        return message;
+        return clienteRepository.save(clienteModel);
 
     }
 
-    //Obtener o mostrar cliente X cedula
+    @Override
+    public ClienteModel findById(Integer id)  {
+        Optional<ClienteModel> clienteOptional = clienteRepository.findById(id);
+        return clienteOptional.orElse(null);
+    }
 
-    public ClienteModel getClienteByCedula(int cedula) {
-        ClienteModel cliente = new ClienteModel();
-        Session session = openSession();
-        try {
-            cliente = session.find(ClienteModel.class, cedula);
-            
-        } catch (Exception e) {
-            e.printStackTrace();
-            
-        }
-        session.close();
-        return cliente;
+    @Override
+    public List<ClienteModel> findAll() {
+
+        return clienteRepository.findAll();
+    }
+
+
+    @Override
+    public void delete(Integer id) {
+        clienteRepository.deleteById(id);
     }
 }
