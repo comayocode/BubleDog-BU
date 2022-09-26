@@ -4,19 +4,22 @@ const body = document.querySelector("body"),
       opcion = body.querySelector(".nav-link"),
       userLogin = document.getElementById("user-login"),
       singOut = document.getElementById("sing-out"),
+      menuHambur = document.getElementById("menu-hambur"),
       menulink = body.querySelector(".menu-link");
 
+
+
+/* Interaccion con modales y botones */
 
 toggle.addEventListener("click", () =>{
     sidebar.classList.toggle("close");
     menulink.classList.toggle("close");
 })
-
-/* userLogin.addEventListener("click", () =>{
-    singOut.style.visibility = "visible";
-    singOut.style.opacity = "1";
-}) */
-
 userLogin.addEventListener("click", () =>{
     singOut.classList.toggle("pop");
 })
+menuHambur.addEventListener("click", () =>{
+    sidebar.classList.toggle("close");
+    menulink.classList.toggle("close");
+})
+

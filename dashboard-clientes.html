@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard BubbleDog</title>
+    <link rel="stylesheet" href="BoostrapStyles.css" />
+    <link rel="stylesheet" href="dashboard.css" />
+    <link rel="shortcut icon" href="./IMG/Logo.ico">
+</head>
+
+<body>
+    <nav class="sidebar close">
+        <header>
+            <div class="image-text">
+                <button id="menu-hambur">
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                </button>
+                <span class="image toggle">
+                    <img src="./IMG/logo.svg" alt="Logo">
+                </span>
+                <div class="text header-text">
+                    <span class="name">BubbleDog</span>
+                </div>
+            </div>
+        </header>
+        <div class="menu-bar">
+            <ul class="menu-link close">
+                <li class="nav-link active">
+                    <a href="dashboard-clientes.html">
+                        <img src="./IMG/Dashboard/clientes.svg" alt="Icono clientes"><span>Clientes</span>
+                    </a>
+                </li>
+                <li class="nav-link">
+                    <a href="dashboard-servicios.html">
+                        <img src="./IMG/Dashboard/servicios.svg" alt="Icono servicios">
+                        <span>Servicios</span>
+                    </a>
+                </li>
+                <li class="nav-link">
+                    <a href="dashboard-movimientos.html">
+                        <img src="./IMG/Dashboard/movimientos.svg" alt="Icono movimientos"><span>Movimientos</span>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+    <main>
+        <section id="top-bar">
+            <img id="user-login" src="./IMG/Dashboard/Loginuser 1.png" alt="logo ingreso de usuario">
+            <div id="sing-out">
+                <a href="login.html"><span> Cerrar Sesión </span></a>
+            </div>
+
+        </section>
+        <section id="clientes">
+            <div class="text">Lista de Clientes</div>
+            <button type="submit" onclick="añadir()" class="btn btn-warning" data-bs-toggle="modal" data-bs-target="#form">Añadir</button>
+            <div>
+                <table class="table table-dark table-striped">
+                    <!--Encabezado-->
+                    <thead>
+                        <!--Fila-->
+                        <tr>
+                            <!--Columna-->
+                            <th>Nombres</th>
+                            <th>Apellidos</th>
+                            <th>Celular</th>
+                            <th>Correo electrónico</th>
+                            <th>Mascota</th>
+                            <th>Raza</th>
+                            <th>Vacuna</th>
+                            <th>Entrega</th>
+                            <th class="acciones">Acciones</th>
+                        </tr>
+                    </thead>
+                    <!--Cuerpo-->
+                    <tbody class="tbody"></tbody>
+                </table>
+            </div>
+        </section>
+        <!-- Modal Eliminar-->
+        <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel">Eliminar Cliente</h5>
+                    </div>
+                    <div class="modal-body">
+                        <span>¿Seguro que quiere eliminar el Cliente?</span>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-danger" data-bs-dismiss="modal"
+                            onclick="delete_user()">Eliminar</button>
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Modal Editar y Añadir -->
+        <form onsubmit="get_data_form(event)" class="modal fade" id="form" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="title"></h5>
+                    </div>
+                    <div class="modal-body">
+                        <p>Nombres</p>
+                        <input type="text" class="form-control" name="nombre" id="nombre">
+                        <div id="msg"></div>
+                        <p>Apellidos</p>
+                        <input type="text" class="form-control" name="apellido" id="apellido">
+                        <p>Celular</p>
+                        <input type="text" class="form-control" name="celular" id="celular">
+                        <p>Correo Electrónico</p>
+                        <input type="text" class="form-control" name="correo" id="correo">
+                        <div id="msg"></div>
+                        <p>Mascota</p>
+                        <input type="text" class="form-control" name="nombreMascota" id="nombre-mascota">
+                        <p>Raza</p>
+                        <input type="text" class="form-control" name="razaMascota" id="raza-mascota">
+                        <p>Vacuna</p>
+                        <input type="text" class="form-control" name="mascotaVacunada" id="mascota-vacunada">
+                    </div>
+                    <div class="modal-footer">
+                        <button type="submit" id="add" class="btn btn-secondary" data-bs-dismiss="modal"></button>
+                        <button type="button" id="cancel" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+                    </div>
+                </div>
+            </div>
+        </form>
+        
+    </main>
+    <script src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script src="./scripts/dashboard.js"></script>
+    <script src="./scripts/dash-clientes.js"></script>
+
+</body>
+
+</html>

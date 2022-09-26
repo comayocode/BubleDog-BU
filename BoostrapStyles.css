@@ -1913,9 +1913,9 @@ progress {
 
 .table-dark {
   --bs-table-color: #fff;
-  --bs-table-bg: #212529;
-  --bs-table-border-color: #373b3e;
-  --bs-table-striped-bg: #2c3034;
+  --bs-table-bg: #151B29;
+  --bs-table-border-color: #373b3e00;
+  --bs-table-striped-bg: #202A3A;
   --bs-table-striped-color: #fff;
   --bs-table-active-bg: #373b3e;
   --bs-table-active-color: #fff;
@@ -2275,7 +2275,7 @@ textarea.form-control-lg {
      -moz-appearance: none;
           appearance: none;
   -webkit-print-color-adjust: exact;
-     color-adjust: exact;
+      accent-color: exact;
           print-color-adjust: exact;
 }
 .form-check-input[type=checkbox] {
@@ -2905,11 +2905,11 @@ textarea.form-control-lg {
 
 .btn-secondary {
   --bs-btn-color: #fff;
-  --bs-btn-bg: #6c757d;
-  --bs-btn-border-color: #6c757d;
+  --bs-btn-bg: #1F4690;
+  --bs-btn-border-color: #1F4690;
   --bs-btn-hover-color: #fff;
-  --bs-btn-hover-bg: #5c636a;
-  --bs-btn-hover-border-color: #565e64;
+  --bs-btn-hover-bg: #193975;
+  --bs-btn-hover-border-color: #193975;
   --bs-btn-focus-shadow-rgb: 130, 138, 145;
   --bs-btn-active-color: #fff;
   --bs-btn-active-bg: #565e64;
@@ -5289,7 +5289,7 @@ textarea.form-control-lg {
   --bs-modal-margin: 0.5rem;
   --bs-modal-color: ;
   --bs-modal-bg: #fff;
-  --bs-modal-border-color: var(--bs-border-color-translucent);
+  --bs-modal-border-color: #1C2431;
   --bs-modal-border-width: 1px;
   --bs-modal-border-radius: 0.5rem;
   --bs-modal-box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075);
@@ -5297,12 +5297,12 @@ textarea.form-control-lg {
   --bs-modal-header-padding-x: 1rem;
   --bs-modal-header-padding-y: 1rem;
   --bs-modal-header-padding: 1rem 1rem;
-  --bs-modal-header-border-color: var(--bs-border-color);
+  --bs-modal-header-border-color: #1C2431;
   --bs-modal-header-border-width: 1px;
   --bs-modal-title-line-height: 1.5;
   --bs-modal-footer-gap: 0.5rem;
   --bs-modal-footer-bg: ;
-  --bs-modal-footer-border-color: var(--bs-border-color);
+  --bs-modal-footer-border-color: #1C2431;
   --bs-modal-footer-border-width: 1px;
   position: fixed;
   top: 0;
@@ -5392,7 +5392,6 @@ textarea.form-control-lg {
   display: flex;
   flex-shrink: 0;
   align-items: center;
-  justify-content: space-between;
   padding: var(--bs-modal-header-padding);
   border-bottom: var(--bs-modal-header-border-width) solid var(--bs-modal-header-border-color);
   border-top-left-radius: var(--bs-modal-inner-border-radius);
@@ -5419,7 +5418,7 @@ textarea.form-control-lg {
   flex-shrink: 0;
   flex-wrap: wrap;
   align-items: center;
-  justify-content: flex-end;
+  justify-content: center;
   padding: calc(var(--bs-modal-padding) - var(--bs-modal-footer-gap) * 0.5);
   background-color: var(--bs-modal-footer-bg);
   border-top: var(--bs-modal-footer-border-width) solid var(--bs-modal-footer-border-color);
@@ -5436,7 +5435,7 @@ textarea.form-control-lg {
     --bs-modal-box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
   }
   .modal-dialog {
-    max-width: var(--bs-modal-width);
+    
     margin-right: auto;
     margin-left: auto;
   }

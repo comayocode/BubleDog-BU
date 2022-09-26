@@ -19,7 +19,7 @@
 body{
     height: 100%;
     background: var(--body-color);
-}
+} 
 /* =============== Sidebar ============= */
 
 .sidebar{
@@ -30,13 +30,36 @@ body{
     width: 16vw;
     background: var(--sidebar-color);
     transition: var(--tran-04);
+    z-index: 2;
 }
 .sidebar.close{
     width: 6vw;
-    transition: var(--tran-04);
 }
 
 
+.sidebar.close button{
+    display: flex;
+    flex-direction: column;
+    width: 2vw;
+    height: 2vw;
+    border: 0;
+    background: transparent;
+    gap: .3vw;
+    cursor: pointer;
+    margin: 2vw 2vw 1.2vw;
+    opacity: 1;
+    transition: none;
+}
+.sidebar button div{
+    background: #D9D9D9;
+    height: .2vw;
+    width: 100%;
+    border-radius: 1vw;
+    transition: all .5s;
+}
+.sidebar button{
+    opacity: 0;
+}
 .sidebar .text{
     font-size: 1.2vw;
     font-weight: 400;
@@ -46,6 +69,10 @@ body{
 .sidebar.close .text{
     opacity: 0;
     transition: var(--tran-04);
+    display: none;
+}
+.sidebar.close .image{
+    display: none;
 }
 .sidebar .image{
     min-width: 2vw;
@@ -82,7 +109,7 @@ header .image-text .header-text{
     border-radius: 2vw;    
     white-space: nowrap;
 }
-.sidebar li:hover{
+.sidebar li:hover, .sidebar li.active{
     background: #151B29;
     width: 100%;
     height: 4.2vw;
@@ -101,6 +128,7 @@ header .image-text .header-text{
 .menu-link.close li a span{
     opacity: 0;
     transition: var(--tran-04);
+    display: none;
 }
 .nav-link a{
     text-decoration: none;
@@ -164,18 +192,14 @@ header .image-text .header-text{
     visibility: visible;
     top: 5.4vw;
 }
-#clientes {
+#clientes, #servicios, #movimientos {
     position: relative;
     height: 100%;
-    left: 16vw;
-    width: calc(100% - 16vw);
-    transition: var(--tran-05);
-}
-.sidebar.close ~ #clientes{
     left: 6vw;
     width: calc(100% - 6vw);
+    transition: var(--tran-05); 
 }
-#clientes .text{
+#clientes .text, #servicios .text, #movimientos .text{
     color: #D9D9D9;
     font-size: 2vw;
     margin: 3vw 3vw 2vw;
@@ -184,30 +208,150 @@ header .image-text .header-text{
     background-color: #EC994B;
     border: none;
     border-radius: 1.3vw;
-    padding: 0.8vw 1.5vw;
-    font-size: 1.1vw;
+    padding: 0.8vw 1.8vw;
+    font-size: 1.2vw;
     margin: 1vw;
     position: absolute;
     left: 2vw;
+    font-weight: 600;
 }
-.btn-primary{
-    background-color: #1F4690;
+.btn-warning a{
+    text-decoration: none;
+    color: #151B29;
+}
+.tbody .btn-primary{
+    background-color: #1572A0;
     border: none;
-    border-radius: 1.3vw;
-    padding: 0.8vw 1.5vw;
-    font-size: 1.1vw;
-    margin: 1vw;
-    position: absolute;
-    right: 10vw;
+    border-radius: .8vw;
+    width: 2.5vw;
+    height: 2.5vw;    
+    margin-right: .5vw;
+    padding: 0;
 }
-.btn-danger{
+.table .btn-danger{
     background-color: #E94560;
     border: none;
-    border-radius: 1.3vw;
-    padding: 0.8vw 1.5vw;
-    font-size: 1.1vw;
-    margin: 1vw;
+    border-radius: .8vw;
+    width: 2.5vw;
+    height: 2.5vw;
     color: #151B29;
-    position: absolute;
-    right: 2vw;
+    margin-right: -1vw;
+    padding: 0;
+}
+.btn-primary img, .btn-danger img{
+    width: 1.2vw;
+    height: 1.2vw;
+}
+#clientes .table, #movimientos .table, #servicios .table{
+    position: relative;
+    height: 100%;
+    width: calc(100% - 6vw);
+    top: 7vw; 
+    left: 3vw;
+    color: #D9D9D9;   
+    border-collapse: collapse;
+}
+.acciones{
+    opacity: 0;
+}
+.table th{
+    padding: 0 1.8vw 1vw;
+}
+.table td{
+    padding: 1.2vw 1.8vw 0;
+    height: 4vw;
+    font-size: 1.1vw;
+}
+.button-table{
+    padding-top: .7vw !important;
+}
+.btn-primary:hover, .btn-danger:hover, .btn-warning:hover{
+    cursor: pointer;
+}
+/* Modal Eliminar */
+
+#exampleModal .modal-dialog{
+    width: 45vw;
+}
+#exampleModal .modal-content{
+    background: #1C2431;
+    border-radius: 1.5vw;
+    text-align: center;    
+}
+#exampleModal .modal-header{
+    display: inline-block;
+    padding-top: 2vw;
+}
+#exampleModal .modal-header h5{
+    font-weight: bold;
+    font-size: 1.6vw;
+    color: #D9D9D9;
+}
+#exampleModal .modal-body{
+    color: #EC994B;
+    font-size: 1.3vw;
+    font-weight: 600;
+}
+#exampleModal .modal-footer button{
+    margin: 1vw;
+    border-radius: 2vw;
+    font-size: 1.1vw;
+}
+#exampleModal .modal-footer .btn-danger{
+    color: #151B29;
+    padding: .8vw 1.3vw;
+}
+#exampleModal .modal-footer .btn-secondary{
+    padding: .8vw 1.3vw;
+}
+
+/* Modal Editar */
+
+#form .modal-dialog{
+    width: 28vw;
+}
+#form .modal-content{
+    background: #1C2431;
+}
+#form .modal-body{
+    text-align: center;
+}
+#form .modal-body p{
+    margin: .6vw .5vw .2vw;
+    font-size: 1vw;
+    font-weight: 600;
+    color: #D9D9D9;
+    text-align: left;
+    margin-left: 4.5vw;
+}
+#form .modal-header{
+    display: inline-block;
+    text-align: center;
+}
+#form .modal-header h5{
+    font-weight: bold;
+    font-size: 1.4vw;
+    color: #D9D9D9;
+}
+#form .modal-body input{
+    width: 17vw;
+    padding: .3vw .8vw;
+    font-size: 1vw;
+}
+.form-control{
+    display: inline-block;
+    background: #CDAC81;
+    border: none;
+    border-radius: 1vw;
+    margin: .2vw;
+}
+#form .btn-secondary{
+    font-size: 1.1vw;
+    border-radius: 1.5vw;
+    padding: .5vw 1vw;
+    margin: 0 1vw .5vw;
+}
+#form #cancel{
+    background: #575b64;
+    border-color: #575b64;
 }
