@@ -258,11 +258,17 @@ header .image-text .header-text{
     padding: 0 1.8vw 1vw;
 }
 .table td{
-    padding: 1.2vw 1.8vw 0;
+    padding: 1.2vw 1.5vw 0;
     height: 4vw;
     font-size: 1.1vw;
 }
-.button-table{
+#servicios .table td{
+    padding: 1.2vw 1.5vw .6vw;
+}
+#servicios .button-table{
+    padding-top: 1.3vw !important;
+}
+#clientes .button-table{
     padding-top: .7vw !important;
 }
 .btn-primary:hover, .btn-danger:hover, .btn-warning:hover{

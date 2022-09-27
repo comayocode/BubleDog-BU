@@ -74,7 +74,7 @@
                             <th>Mascota</th>
                             <th>Raza</th>
                             <th>Vacuna</th>
-                            <th>Entrega</th>
+                            <th>Observación</th>
                             <th class="acciones">Acciones</th>
                         </tr>
                     </thead>
@@ -109,9 +109,10 @@
                         <h5 class="modal-title" id="title"></h5>
                     </div>
                     <div class="modal-body">
+                        <p>Cédula</p>
+                        <input type="text" class="form-control" name="cedula" id="cedula">
                         <p>Nombres</p>
                         <input type="text" class="form-control" name="nombre" id="nombre">
-                        <div id="msg"></div>
                         <p>Apellidos</p>
                         <input type="text" class="form-control" name="apellido" id="apellido">
                         <p>Celular</p>
@@ -125,6 +126,8 @@
                         <input type="text" class="form-control" name="razaMascota" id="raza-mascota">
                         <p>Vacuna</p>
                         <input type="text" class="form-control" name="mascotaVacunada" id="mascota-vacunada">
+                        <p>Observación</p>
+                        <input type="text" class="form-control" name="observacion" id="observacion">
                     </div>
                     <div class="modal-footer">
                         <button type="submit" id="add" class="btn btn-secondary" data-bs-dismiss="modal"></button>

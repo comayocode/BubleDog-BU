@@ -31,7 +31,7 @@ function listar_servicios(servicios) {
     table.innerHTML = tbody
 }
 function btn_delete(servicios) {
-    ID_SERVICIO = servicios.idSERVICIO
+    ID_SERVICIO = servicios.id_servicio
     console.log(ID_SERVICIO)
 }
 /* *******************Funcion Eliminar**************** */
@@ -54,7 +54,7 @@ function editar(e) {
     document.getElementById("title").innerText = "Editar servicio"
     document.getElementById("add").innerText = "Editar"
     update_flag = true
-    ID_SERVICIO = fila.idServicio
+    ID_SERVICIO = fila.id_servicio
     console.log(ID_SERVICIO)
     console.log(`editar:${update_flag}`)
 }
@@ -99,17 +99,14 @@ async function create(servicios) {
 function get_data_form(evt) {
     const form = evt.target
     const servicios = {
-        nombre: form.nombre.value,
-        apellidos: form.apellido.value,
-        telefono: form.celular.value,
-        email: form.correo.value,
-        nombre_mascota: form.nombreMascota.value,
-        raza: form.razaMascota.value,
-        vacunado: form.mascotaVacunada.value
+        nombre_servicio: form.nombre.value,
+        costo_servicio: form.precio.value,
+        detalles_servicio: form.detalles.value
     }
     if (update_flag) {
         // añade el id al objeto servicio
-        servicios.idServicio = ID_SERVICIO
+        servicios.id_servicio = ID_SERVICIO
+        console.log(form.detalles.value)
         update(servicios)
         console.log(`if:${update_flag}`)
     } else {

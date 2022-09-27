@@ -53,7 +53,7 @@
             </div>
 
         </section>
-        <section id="movimientos">
+        <section id="servicios">
             <div class="text">Lista de Servicios</div>
             <button type="submit" onclick="añadir()" class="btn btn-warning" data-bs-toggle="modal" data-bs-target="#form">Añadir</button>
             <div>
@@ -85,14 +85,14 @@
                     </div>
                     <div class="modal-footer">
                         <button type="button" class="btn btn-danger" data-bs-dismiss="modal"
-                            onclick="">Eliminar</button>
+                            onclick="delete_user()">Eliminar</button>
                         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
                     </div>
                 </div>
             </div>
         </div>
         <!-- Modal Editar y Añadir -->
-        <form onsubmit="" class="modal fade" id="form" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <form onsubmit="get_data_form(event)" class="modal fade" id="form" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
             <div class="modal-dialog">
                 <div class="modal-content">
                     <div class="modal-header">

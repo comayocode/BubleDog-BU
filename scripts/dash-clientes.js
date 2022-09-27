@@ -26,7 +26,7 @@ function listar_clientes(clientes) {
                   <td>${c.nombre_mascota}</td>
                   <td>${c.raza}</td>
                   <td>${c.vacunado}</td>
-                  <td>${c.servicioModels}</td>
+                  <td>${c.observacion}</td>
                   <td class="button-table">
                   <button class="btn btn-primary" onclick='editar(${JSON.stringify(c)})' data-bs-toggle="modal" data-bs-target="#form"><img src="./IMG/Dashboard/editar.svg" alt="Editar"></button>
                   <button class="btn btn-danger" onclick='btn_delete(${JSON.stringify(c)})' data-bs-toggle="modal" data-bs-target="#exampleModal"><img src="./IMG/Dashboard/eliminar.svg" alt="Eliminar"></button>
@@ -60,6 +60,7 @@ function editar(e) {
   document.getElementById("nombre-mascota").value = fila.nombre_mascota;
   document.getElementById("raza-mascota").value = fila.raza;
   document.getElementById("mascota-vacunada").value = fila.vacunado;
+  document.getElementById("observacion").value = fila.observacion;
   document.getElementById("title").innerText="Editar cliente"
   document.getElementById("add").innerText="Editar"
   update_flag= true
@@ -112,13 +113,15 @@ async function create (clientes) {
 function get_data_form(evt){
   const form = evt.target
   const clientes = {
+    cedula: form.cedula.value,
     nombre: form.nombre.value,
     apellidos: form.apellido.value,
     telefono: form.celular.value,
     email: form.correo.value,
     nombre_mascota: form.nombreMascota.value,
     raza: form.razaMascota.value,
-    vacunado: form.mascotaVacunada.value
+    vacunado: form.mascotaVacunada.value,
+    observacion: form.observacion.value
   }
   if (update_flag) {
     // añade el id al objeto cliente
