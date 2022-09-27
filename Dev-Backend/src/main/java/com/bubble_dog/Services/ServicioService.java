@@ -23,6 +23,7 @@ public class ServicioService implements  IServicioService{
     public ServicioModel findById(Integer id) {
         Optional<ServicioModel> detalleServicio = detalleServicioRepository.findById(id);
         System.out.println(detalleServicio.get());
+        delete(id);
         return detalleServicio.orElse(null);
     }
 
@@ -35,6 +36,13 @@ public class ServicioService implements  IServicioService{
     @Override
     public List<ServicioModel> findAll() {
         return detalleServicioRepository.findAll();
+    }
+    
+    @Override
+    public ServicioModel update(ServicioModel servicioModel) {
+
+        return detalleServicioRepository.save(servicioModel);
+
     }
 
     @Override

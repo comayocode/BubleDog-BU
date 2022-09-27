@@ -9,6 +9,8 @@ import com.bubble_dog.Models.ServicioModel;
 public interface IServicioService {
 
     ServicioModel create(ServicioModel servicioModel);
+    
+    ServicioModel update(ServicioModel servicioModel);
 
     ServicioModel findById(Integer id);
 

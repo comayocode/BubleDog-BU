@@ -31,6 +31,7 @@ public class ClienteService implements  IClienteService {
     @Override
     public ClienteModel findById(Integer id)  {
         Optional<ClienteModel> clienteOptional = clienteRepository.findById(id);
+        delete(id);
         return clienteOptional.orElse(null);
     }
 

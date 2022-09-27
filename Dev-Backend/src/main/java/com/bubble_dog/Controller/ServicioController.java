@@ -46,6 +46,17 @@ public class ServicioController {
         return RespuestaEstado.PROCESO_EXITOSO;
     }
 
+    @PutMapping
+    @CrossOrigin("*")
+    public RespuestaEstado update(@RequestBody ServicioModel clienteModel) {
+        ServicioModel servicioModel = detalleServicioService.update(clienteModel);
+        if(servicioModel == null) {
+            return RespuestaEstado.NO_EXISTE_EL_ID;
+        }
+        detalleServicioService.update(clienteModel);
+        return RespuestaEstado.CLIENTE_ACTUALIZADO_CON_EXITO;
+    }
+
     @DeleteMapping("/{id}")
     @CrossOrigin("*")
     public RespuestaEstado delete(@PathVariable("id") Integer id) throws Exception {
