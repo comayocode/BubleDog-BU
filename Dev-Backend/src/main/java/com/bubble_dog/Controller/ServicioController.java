@@ -6,7 +6,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import com.bubble_dog.Models.ServicioModel;
-import com.bubble_dog.Services.DetalleServicioService;
+import com.bubble_dog.Services.ServicioService;
 import com.bubble_dog.exception.RespuestaEstado;
 
 import java.util.List;
@@ -16,14 +16,16 @@ import java.util.List;
 public class ServicioController {
 
     @Autowired
-    private DetalleServicioService detalleServicioService;
+    private ServicioService detalleServicioService;
 
     @GetMapping
+    @CrossOrigin("*")
     public ResponseEntity<List<ServicioModel>> findAll() throws  Exception{
         return new ResponseEntity<>(detalleServicioService.findAll(), HttpStatus.OK);
     }
 
     @GetMapping("/{id}")
+    @CrossOrigin("*")
     public RespuestaEstado findById(@PathVariable("id") Integer id_servicio) throws Exception {
         ServicioModel detalleServicio = detalleServicioService.findById(id_servicio);
         if(detalleServicio == null) {
@@ -34,6 +36,7 @@ public class ServicioController {
     }
 
     @PostMapping
+    @CrossOrigin("*")
     public  RespuestaEstado create(@RequestBody ServicioModel servicio) throws  Exception {
         ServicioModel servicioModel = detalleServicioService.create(servicio);
         if(servicioModel == null) {
@@ -44,6 +47,7 @@ public class ServicioController {
     }
 
     @DeleteMapping("/{id}")
+    @CrossOrigin("*")
     public RespuestaEstado delete(@PathVariable("id") Integer id) throws Exception {
         ServicioModel servicioModel = detalleServicioService.findById(id);
         if(servicioModel == null) {

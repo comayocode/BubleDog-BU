@@ -3,15 +3,15 @@ package com.bubble_dog.Services;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import com.bubble_dog.Models.ServicioModel;
-import com.bubble_dog.repository.DetalleServicioRepository;
+import com.bubble_dog.repository.ServicioRepository;
 import java.util.Date;
 import java.util.List;
 import java.util.Optional;
 
 @Service
-public class DetalleServicioService implements  IDetalleServicio{
+public class ServicioService implements  IServicioService{
     @Autowired
-    private DetalleServicioRepository detalleServicioRepository;
+    private ServicioRepository detalleServicioRepository;
 
 
     @Override

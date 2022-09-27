@@ -6,7 +6,7 @@ import java.util.List;
 
 import com.bubble_dog.Models.ServicioModel;
 
-public interface IDetalleServicio {
+public interface IServicioService {
 
     ServicioModel create(ServicioModel servicioModel);
 

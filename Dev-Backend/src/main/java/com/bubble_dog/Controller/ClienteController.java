@@ -18,15 +18,17 @@ public class ClienteController {
     private ClienteService clienteService;
 
     @GetMapping
+    @CrossOrigin("*")
     public ResponseEntity<List<ClienteModel>> findAll() throws Exception {
 
         return new ResponseEntity<>(clienteService.findAll(), HttpStatus.OK) ;
     }
 
     @PostMapping
+    @CrossOrigin("*")
     public RespuestaEstado create(@RequestBody ClienteModel clienteModel) {
         ClienteModel clientes = clienteService.update(clienteModel);
-        if(!(clientes == null)) {
+        if((clientes == null)) {
             return RespuestaEstado.ERROR_DE_PETICION;
         }
 
@@ -34,6 +36,7 @@ public class ClienteController {
     }
 
     @PutMapping
+    @CrossOrigin("*")
     public RespuestaEstado update(@RequestBody ClienteModel clienteModel) {
         ClienteModel clientes = clienteService.update(clienteModel);
         if(clientes == null) {
@@ -44,6 +47,7 @@ public class ClienteController {
     }
 
     @GetMapping("/{id}")
+    @CrossOrigin("*")
     public RespuestaEstado findById(@PathVariable("id") Integer idCliente) {
         ClienteModel clienteModel = clienteService.findById(idCliente);
         if(clienteModel == null) {
@@ -54,6 +58,7 @@ public class ClienteController {
     }
 
     @DeleteMapping("/{id}")
+    @CrossOrigin("*")
     public RespuestaEstado delete(@PathVariable("id") Integer id) throws Exception {
         ClienteModel clienteModel = clienteService.findById(id);
         if(clienteModel == null) {

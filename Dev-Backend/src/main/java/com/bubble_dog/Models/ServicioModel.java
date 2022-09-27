@@ -2,9 +2,7 @@ package com.bubble_dog.Models;
 
 
 import org.springframework.format.annotation.DateTimeFormat;
-
 import javax.persistence.*;
-import java.io.Serializable;
 import java.util.Date;
 import java.util.List;
 
@@ -31,9 +29,9 @@ public class ServicioModel {
     @Column(name = "detalles_servicio", length = 255)
     private String detalles_servicio;
 
-    @ManyToMany(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
-    private List<ClienteModel> clienteModel;
-
+    //Relacion de las Tablas
+    @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.LAZY, mappedBy = "servicioModel")
+    private List<DetallesServicioModel> detallesServicios;
     public ServicioModel() {
     }
 
@@ -91,11 +89,13 @@ public class ServicioModel {
         this.hora_fecha_entrega = hora_fecha_entrega;
     }
 
-    public List<ClienteModel> getClienteModel() {
-        return clienteModel;
+    public List<DetallesServicioModel> getDetallesServicios() {
+        return detallesServicios;
     }
 
-    public void setClienteModel(List<ClienteModel> clienteModel) {
-        this.clienteModel = clienteModel;
+    public void setDetallesServicios(List<DetallesServicioModel> detallesServicios) {
+        this.detallesServicios = detallesServicios;
     }
+
+    
 }

@@ -42,8 +42,8 @@ public class ClienteModel {
     private String observacion;
 
     //Relacion de las Tablas
-    @ManyToMany(cascade = CascadeType.ALL, fetch = FetchType.LAZY, mappedBy = "clienteModel")
-    private List<ServicioModel> servicioModels;
+    @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.LAZY, mappedBy = "clienteModel")
+    private List<DetallesServicioModel> detallesServicios;
 
 
     public ClienteModel() {
@@ -154,11 +154,13 @@ public class ClienteModel {
         this.observacion = observacion;
     }
 
-    public List<ServicioModel> getServicioModels() {
-        return servicioModels;
+    public List<DetallesServicioModel> getDetallesServicios() {
+        return detallesServicios;
     }
 
-    public void setServicioModels(List<ServicioModel> servicioModels) {
-        this.servicioModels = servicioModels;
+    public void setDetallesServicios(List<DetallesServicioModel> detallesServicios) {
+        this.detallesServicios = detallesServicios;
     }
+
+    
 }
